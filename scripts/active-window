@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# active-window
+# script displaying the number of currently used tag
+# by awesome-wm
+
+output=$(awesome-client '
+  return tonumber(client.focus.first_tag.name)
+')
+
+echo "${output} | awk '{print $2}'"

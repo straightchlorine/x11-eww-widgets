@@ -1,0 +1,8 @@
+#!/bin/bash
+
+output=$(awesome-client '
+  local helpers = require("helpers.workspaces")
+  return get_workspaces()
+')
+
+echo $output | sed 's/^string \"// ' | sed 's/\"$// '

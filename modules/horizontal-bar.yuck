@@ -6,11 +6,9 @@
 
 (defwidget horizontal-bar []
   (box
+    :class 'bar-background'
     :space-evenly false
     :orientation 'h'
-    (box
-      :class 'bar-background'
-    )
     (centerbox
       :class 'bar'
       :width 1870

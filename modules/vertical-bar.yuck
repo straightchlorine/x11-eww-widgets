@@ -6,11 +6,9 @@
 
 (defwidget vertical-bar []
   (box
+    :class 'bar-background'
     :space-evenly false
     :orientation 'h'
-    (box
-      :class 'bar-background'
-    )
     (centerbox
       :class 'bar'
       :width 1062
@@ -23,11 +21,11 @@
 
 (defwidget left-vertical []
   (box
+    :class 'bar-left'
     :space-evenly false
-    :spacing 5
     :valign 'center'
     :halign 'start'
-    :class 'bar-left'
+    :spacing 5
     (revealer
       :reveal true
       :transition 'slideright'

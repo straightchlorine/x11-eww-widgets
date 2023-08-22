@@ -1,0 +1,39 @@
+(defwidget network-info []
+  (box
+    :class 'network-module'
+    :space-evenly false
+    :orientation 'h'
+    :valign 'center'
+    :halign 'start'
+    (box
+      :space-evenly false
+      :orientation 'v'
+      :valign 'center'
+      :halign 'end'
+      :class 'network-rx-tx'
+      (label 
+        :class 'network-info-rx' 
+        :text {sys-net.rx.ratestring}
+      )
+      (label 
+        :class 'network-info-tx' 
+        :text {sys-net.tx.ratestring}
+      )
+    )
+    (box
+      :space-evenly false
+      :orientation 'v'
+      :halign 'end'
+      :valign 'center'
+      :class 'network-icons'
+      (label 
+        :class 'network-icon-rx' 
+        :text ''
+      )
+      (label 
+        :class 'network-icon-tx' 
+        :text ''
+      )
+    )
+  )
+)

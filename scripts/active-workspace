@@ -1,1 +1,26 @@
-/home/zweiss/automation/awesomemw/active-workspace
+#!/bin/bash
+
+# active-window
+# script displaying the number of currently selected tag
+# by awesome-wm
+
+function get_active_workspace() {
+  output=$(awesome-client "
+    return tonumber(screen[$1].selected_tag.name)
+  ")
+  echo $output | sed 's/double // '
+}
+
+number_regex='^[0-9]+$'
+previous_output=''
+while true; do
+    current_output=$(get_active_workspace $1)
+
+    # check if the output is different than previous one
+    # and verify if it's an interger (just in case)
+    if [ "$current_output" != "$previous_output" ] && \
+      [[ $current_output =~ $number_regex ]]; then
+        echo "$current_output"
+        previous_output="$current_output"
+    fi
+done

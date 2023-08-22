@@ -1,1 +1,32 @@
-/home/zweiss/automation/awesomemw/workspaces
+#!/bin/bash
+
+# workspaces
+# Script returns summary of each created workspace
+# (tag) and the number of windows assigned to it
+# as a JSON file.
+
+get_workspaces() {
+  output=$(awesome-client "
+    require('helpers.workspaces')
+    return get_workspaces()
+  ")
+
+
+  filtered_output=$(echo $output | sed 's/^string \"// ' | sed 's/\"$// ')
+  echo $filtered_output \
+    | jq .display \
+    | jq ".[] | select(.id == $1)" \
+    | jq .workspaces -c
+}
+
+
+previous_output=''
+while true; do
+    current_output=$(get_workspaces $1)
+
+    # check if the output is different than previous one
+    if [ "$current_output" != "$previous_output" ]; then
+        echo "$current_output"
+        previous_output="$current_output"
+    fi
+done

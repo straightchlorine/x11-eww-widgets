@@ -1,0 +1,47 @@
+(include './system-info.yuck')
+
+(defwidget vertical-system-info []
+  (centerbox
+    :class 'system-info'
+    :space-evenly false
+    :orientation 'h'
+    :halign 'start'
+    (cpu-info)
+    (ram-info)
+    (disk-info-short)
+  )
+)
+
+(defwidget disk-info-short []
+  (box
+    :class 'disk-module'
+    :orientation 'v'
+    :space-evenly false
+    :valign 'center'
+    (label
+      :class 'disk-mount'
+      :valign 'center'
+      :halign 'center'
+      :text '${(sys-root.usage == '') ? '' : '${sys-root.name}'}'
+    )
+    (box
+      :class 'disk-icon-usage'
+      :orientation 'h'
+      :space-evenly false
+      :valign 'center'
+      :halign 'start'
+      (label
+        :class 'disk-icon'
+        :valign 'center'
+        :halign 'start'
+        :text '${(sys-root.usage == '') ? '' : ''}'
+      )
+      (label
+        :class 'disk-usage'
+        :valign 'center'
+        :halign 'end'
+        :text '${(sys-root.usage == '') ? '' : '${sys-root.usage}%'}'
+      )
+    )
+  )
+)

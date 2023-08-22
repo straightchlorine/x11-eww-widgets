@@ -1,0 +1,42 @@
+(include './variables.yuck')
+
+(include './modules/vertical-bar.yuck')
+(include './modules/bar.yuck')
+
+(defwindow bar
+    :monitor 0
+    :geometry
+      (geometry
+        :x "0%"
+        :y "10px"
+        :width "99.9947%"
+        :height "45px"
+        :anchor "top center")
+    :reserve
+      (struts
+        :side "top"
+        :distance "80px")
+    :stacking "bg"
+    :windowtype "dock"
+    :wm-ignore "false"
+    (horizontal-bar)
+)
+
+(defwindow vertical-bar
+    :monitor 0
+    :geometry
+      (geometry
+        :x "0%"
+        :y "10px"
+        :width "300px"
+        :height "45px"
+        :anchor "top center")
+    :reserve
+      (struts
+        :side "top"
+        :distance "80px")
+    :stacking "bg"
+    :windowtype "dock"
+    :wm-ignore "false"
+    (vertical-bar)
+)

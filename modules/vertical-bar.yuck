@@ -1,8 +1,8 @@
-(include './active-workspace.yuck')
-(include './vertical-system-info.yuck')
-(include './workspaces.yuck')
-(include './clock-date.yuck')
-(include './weather.yuck')
+(include './modules/active-workspace.yuck')
+(include './modules/vertical-system-info.yuck')
+(include './modules/workspaces.yuck')
+(include './modules/clock-date.yuck')
+(include './modules/weather.yuck')
 
 (defwidget vertical-bar []
   (box
@@ -14,14 +14,14 @@
     (centerbox
       :class 'bar'
       :width 1062
-      (left)
-      (center)
-      (right)
+      (left-vertical)
+      (center-vertical)
+      (right-vertical)
     )
   )
 )
 
-(defwidget left []
+(defwidget left-vertical []
   (box
     :space-evenly false
     :spacing 5
@@ -36,7 +36,7 @@
   )
 )
 
-(defwidget center []
+(defwidget center-vertical []
   (box
     :space-evenly false 
     :orientation 'v'
@@ -66,7 +66,7 @@
   )
 )
 
-(defwidget right []
+(defwidget right-vertical []
   (eventbox
     (box
       :space-evenly false

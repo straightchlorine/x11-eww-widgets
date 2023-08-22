@@ -1,4 +1,4 @@
-(include './system-info.yuck')
+(include './modules/system-info.yuck')
 
 (defwidget vertical-system-info []
   (centerbox

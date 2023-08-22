@@ -1,9 +1,9 @@
 (include './variables.yuck')
 
 (include './modules/vertical-bar.yuck')
-(include './modules/bar.yuck')
+(include './modules/horizontal-bar.yuck')
 
-(defwindow bar
+(defwindow horizontal-bar
     :monitor 0
     :geometry
       (geometry

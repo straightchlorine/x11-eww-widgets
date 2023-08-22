@@ -1,8 +1,8 @@
-(include './system-info.yuck')
-(include './workspaces.yuck')
-(include './clock-date.yuck')
-(include './network.yuck')
-(include './weather.yuck')
+(include './modules/system-info.yuck')
+(include './modules/workspaces.yuck')
+(include './modules/clock-date.yuck')
+(include './modules/network.yuck')
+(include './modules/weather.yuck')
 
 (defwidget horizontal-bar []
   (box

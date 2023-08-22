@@ -1,0 +1,84 @@
+(include './system-info.yuck')
+(include './workspaces.yuck')
+(include './clock-date.yuck')
+(include './network.yuck')
+(include './weather.yuck')
+
+(defwidget horizontal-bar []
+  (box
+    :space-evenly false
+    :orientation 'h'
+    (box
+      :class 'bar-background'
+    )
+    (centerbox
+      :class 'bar'
+      :width 1870
+      (left)
+      (center)
+      (right)
+    )
+  )
+)
+
+(defwidget left []
+  (eventbox
+    (box
+      :space-evenly false
+      :spacing 5
+      :valign 'center'
+      :halign 'start'
+      :class 'bar-left'
+      (revealer
+        :reveal true
+        :transition 'slideright'
+        (system-info)
+      )
+    )
+  )
+)
+
+(defwidget center []
+  (box
+    :space-evenly false 
+    :orientation 'v'
+    (box
+      :space-evenly false 
+      :halign 'center'
+      :valign 'start'
+      :spacing 5
+      (box
+        :space-evenly false
+        :spacing 5
+        :class 'module'
+        (revealer
+          :reveal true
+          :transition 'slideright'
+          :duration '0ms'
+          (workspaces)
+        )
+        (revealer
+          :reveal true
+          :transition 'slideright'
+          :duration '0ms'
+          (activeworkspace)
+        )
+      )
+    )
+  )
+)
+
+(defwidget right []
+  (eventbox
+    (centerbox
+      :space-evenly false
+      :spacing 5
+      :valign 'center'
+      :halign 'end'
+      :class 'bar-right'
+      (network-info)
+      (weather)
+      (clock-date)
+    )
+  )
+)

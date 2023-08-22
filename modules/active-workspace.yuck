@@ -1,4 +1,4 @@
-(defwidget activewindow []
+(defwidget activeworkspace []
   (box
     :valign 'center'
     :space-evenly false
@@ -12,7 +12,7 @@
           (revealer
             :transition 'slideright'
             :duration '0ms'
-            (label :limit-width 40 :text '${active-window}')
+            (label :limit-width 40 :text '${active-workspace-main}')
           )
         )
       )

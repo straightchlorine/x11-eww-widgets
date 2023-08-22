@@ -28,8 +28,8 @@
       (geometry
         :x "0%"
         :y "10px"
-        :width "300px"
-        :height "45px"
+        :width "0px"
+        :height "0px"
         :anchor "top center")
     :reserve
       (struts

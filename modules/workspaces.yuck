@@ -17,10 +17,7 @@
             (label
               :valign 'center'
               :class
-                '${(workspace.windows > 0) ?
-                'workspace-occupied-text' :
-                'workspace-unoccupied-text'}
-                workspace-text'
+                '${(workspace.windows > 0) ? 'workspace-occupied-text' : 'workspace-unoccupied-text'} workspace-text'
               :text '${workspace-icons[workspace.id - 1]}'
             )
           )

@@ -6,40 +6,41 @@
 
 (defwidget horizontal-bar []
   (box
-    :class 'bar-background'
     :space-evenly false
     :orientation 'h'
+    :class 'bar-module'
     (centerbox
       :class 'bar'
       :width 1870
-      (left)
-      (center)
-      (right)
+      (left-horizontal)
+      (center-horizontal)
+      (right-horizontal)
     )
   )
 )
 
-(defwidget left []
+(defwidget left-horizontal []
   (eventbox
     (box
       :space-evenly false
-      :spacing 5
       :valign 'center'
       :halign 'start'
+      :spacing 5
       :class 'bar-left'
       (revealer
-        :reveal true
         :transition 'slideright'
+        :reveal true
         (system-info)
       )
     )
   )
 )
 
-(defwidget center []
+(defwidget center-horizontal []
   (box
     :space-evenly false 
     :orientation 'v'
+    :class 'bar-center'
     (box
       :space-evenly false 
       :halign 'center'
@@ -48,17 +49,16 @@
       (box
         :space-evenly false
         :spacing 5
-        :class 'module'
         (revealer
-          :reveal true
           :transition 'slideright'
           :duration '0ms'
+          :reveal true
           (workspaces)
         )
         (revealer
-          :reveal true
           :transition 'slideright'
           :duration '0ms'
+          :reveal true
           (activeworkspace)
         )
       )
@@ -66,13 +66,13 @@
   )
 )
 
-(defwidget right []
+(defwidget right-horizontal []
   (eventbox
     (centerbox
       :space-evenly false
-      :spacing 5
       :valign 'center'
       :halign 'end'
+      :spacing 5
       :class 'bar-right'
       (network-info)
       (weather)

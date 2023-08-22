@@ -18,7 +18,7 @@ $workspace_active_background: $color10;
 }
 
 // bar
-.bar-background {
+.bar-module {
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);
   background-color: $background;
 }
@@ -28,17 +28,20 @@ $workspace_active_background: $color10;
   margin: 3px;
 }
 
+.bar-right {
+  margin-right: 20px;
+}
+
+.bar-left {
+  margin-left: 20px;
+}
+
 // workspaces
 .workspaces-module {
   background-color: transparent;
 }
 
-.workspaces {
-  
-}
-
 .workspace {
-  border: none;
   font-size: 1rem;
 }
 
@@ -65,12 +68,6 @@ $workspace_active_background: $color10;
   background-color: $workspace_active_background;
 }
 
-.workspace:hover {
-  :first-child {
-
-  }
-}
-
 .workspace-occupied-text {
   background-color: $color6;
 }
@@ -79,25 +76,21 @@ $workspace_active_background: $color10;
   background-color: rgba(146, 145, 145, 0.3);
 }
 
-.bar-right {
-  margin-right: 20px;
-}
-
 // clock
-.clock-date {
+.time-module {
   color: $foreground;
 }
 
 .clock {
-  font-size: 16px
+  font-size: 15px
 }
 
 .date {
-  font-size: 14px
+  font-size: 12px
 }
 
 // weather
-.weather-wrapper {
+.weather-module {
   margin-right: 30px;
   color: $foreground;
 }
@@ -112,7 +105,7 @@ $workspace_active_background: $color10;
 }
 
 // network
-.network-info {
+.network-module {
   margin-right: 20px;
 }
 
@@ -120,7 +113,15 @@ $workspace_active_background: $color10;
   color: $network;
 }
 
-.network-icon-wrapper {
+.network-info-rx {
+  margin-bottom: 2px;
+}
+
+.network-info-tx {
+  margin-top: 2px;
+}
+
+.network-icons {
   margin-right: 10px;
   margin-left: 10px;
   color: $network;
@@ -135,24 +136,15 @@ $workspace_active_background: $color10;
   font-size: 1.5rem;
 }
 
-.network-info-rx {
-  margin-bottom: 2px;
-}
-
-.network-info-tx {
-  margin-top: 2px;
-}
-
 // system information
-.system-info {
+.system-module {
   font-size: 1rem;
   color: $foreground;
 }
 
 // sysinfo --cpu
-.cpu-wrapper {
-  margin-left: 30px;
-  margin-right: 30px;
+.cpu-module {
+  margin-right: 20px;
 }
 
 .cpu-icon {
@@ -160,8 +152,8 @@ $workspace_active_background: $color10;
 }
 
 // sysinfo --ram
-.ram-wrapper {
-  margin-right: 5px;
+.ram-module {
+  margin-right: 20px;
 }
 
 .ram-icon {
@@ -170,21 +162,16 @@ $workspace_active_background: $color10;
 }
 
 // sysinfo --disk
-.disk-module {
-  margin-left: 25px;
-}
-
 .disk-mount {
   font-size: 0.8rem;
 }
 
 .disk-usage {
   margin-left: 5px;
-  font-size: 16px;
+  font-size: 12px;
 }
 
 .disk-icon {
-  font-size: 22px;
+  font-size: 18px;
   margin-right: 5px;
-  margin-bottom: -8px;
 }

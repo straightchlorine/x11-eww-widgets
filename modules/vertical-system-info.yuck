@@ -2,10 +2,10 @@
 
 (defwidget vertical-system-info []
   (centerbox
-    :class 'system-info'
     :space-evenly false
     :orientation 'h'
     :halign 'start'
+    :class 'system-module'
     (cpu-info)
     (ram-info)
     (disk-info-short)
@@ -14,32 +14,32 @@
 
 (defwidget disk-info-short []
   (box
-    :class 'disk-module'
-    :orientation 'v'
     :space-evenly false
+    :orientation 'v'
     :valign 'center'
+    :class 'disk-module'
     (label
-      :class 'disk-mount'
       :valign 'center'
       :halign 'center'
+      :class 'disk-mount'
       :text '${(sys-root.usage == '') ? '' : '${sys-root.name}'}'
     )
     (box
-      :class 'disk-icon-usage'
-      :orientation 'h'
       :space-evenly false
+      :orientation 'h'
       :valign 'center'
       :halign 'start'
+      :class 'disk-prompt'
       (label
-        :class 'disk-icon'
         :valign 'center'
         :halign 'start'
+        :class 'disk-icon'
         :text '${(sys-root.usage == '') ? '' : ''}'
       )
       (label
-        :class 'disk-usage'
         :valign 'center'
         :halign 'end'
+        :class 'disk-usage'
         :text '${(sys-root.usage == '') ? '' : '${sys-root.usage}%'}'
       )
     )

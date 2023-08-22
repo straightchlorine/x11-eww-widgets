@@ -6,9 +6,9 @@
 
 (defwidget vertical-bar []
   (box
-    :class 'bar-background'
     :space-evenly false
     :orientation 'h'
+    :class 'bar-module'
     (centerbox
       :class 'bar'
       :width 1062
@@ -21,14 +21,14 @@
 
 (defwidget left-vertical []
   (box
-    :class 'bar-left'
     :space-evenly false
     :valign 'center'
     :halign 'start'
     :spacing 5
+    :class 'bar-left'
     (revealer
-      :reveal true
       :transition 'slideright'
+      :reveal true
       (vertical-system-info)
     )
   )
@@ -38,6 +38,7 @@
   (box
     :space-evenly false 
     :orientation 'v'
+    :class 'bar-center'
     (box
       :space-evenly false 
       :halign 'center'
@@ -46,17 +47,16 @@
       (box
         :space-evenly false
         :spacing 5
-        :class 'module'
         (revealer
-          :reveal true
           :transition 'slideright'
           :duration '0ms'
+          :reveal true
           (workspaces)
         )
         (revealer
-          :reveal true
           :transition 'slideright'
           :duration '0ms'
+          :reveal true
           (activeworkspace)
         )
       )
@@ -68,9 +68,9 @@
   (eventbox
     (box
       :space-evenly false
-      :spacing 5
       :valign 'center'
       :halign 'end'
+      :spacing 5
       :class 'bar-right'
       (weather)
       (clock-date)

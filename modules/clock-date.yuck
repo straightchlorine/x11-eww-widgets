@@ -1,14 +1,14 @@
 (defwidget clock-date []
   (eventbox
-    :class 'clock-date'
+    :class 'time-module'
     (box
       :space-evenly false
       :orientation 'v'
       :valign 'center'
       (box
-        :class 'clock'
         :orientation 'v'
         :valign 'center'
+        :class 'clock'
         (box
           :space-evenly false
           :halign 'end'

@@ -1,29 +1,40 @@
 (defwidget workspaces []
   (eventbox
-    :onscroll 'echo {} | sed -e \"s/up/-1/g\" -e \"s/down/+1/g\" | xargs hyprctl dispatch workspace'
-    :class 'workspace-wrapper'
+    ; port to awesomewm
+    ;:onscroll 'echo {} | sed -e \"s/up/-1/g\" -e \"s/down/+1/g\" | xargs hyprctl dispatch workspace'
+    :class 'workspaces-module'
     (overlay
       (box
+        ; displays all the workspaces as buttons, next to each other
         :class 'workspaces'
         :spacing 0
         :space-evenly false
-        (for i in workspace
+        (for workspace in workspaces
           (button
             :class 'workspace'
-            :onclick 'hyprctl dispatch workspace ${i.id}'
+            ; port to awesomewm
+            ;:onclick 'hyprctl dispatch workspace ${i.id}'
             (label
               :valign 'center'
-              :class '${(i.windows > 0) ? 'workspace-occupied-text' : 'workspace-unoccupied-text'} workspace-text'
-              :text '${workspace-icons[i.id - 1]}'
+              :class
+                '${(workspace.windows > 0) ?
+                'workspace-occupied-text' :
+                'workspace-unoccupied-text'}
+                workspace-text'
+              :text '${workspace-icons[workspace.id - 1]}'
             )
           )
         )
       )
       (button
+        ; separate active workspace indicator
         :class 'workspace-active'
         :style 'margin-left:  ${31 * (active-workspace - 1)}px;
-                margin-right: ${31 * (10 - active-workspace)}px;'
-        (label :valign 'center' :class 'workspace-text workspace-active-text' :text '${active-workspace}'
+          margin-right: ${31 * (10 - active-workspace)}px;'
+        (label
+          :valign 'center'
+          :class 'workspace-text workspace-active-text'
+          :text '${active-workspace}'
         )
       )
     )

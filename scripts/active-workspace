@@ -1,26 +1,11 @@
 #!/bin/bash
 
-# active-window
-# script displaying the number of currently selected tag
-# by awesome-wm
+# active-workspace
+# script follows each modification of active-tag file
+# created by awesomewm and supplies it continously to
+# eww workspace widget
 
-function get_active_workspace() {
-  output=$(awesome-client "
-    return tonumber(screen[$1].selected_tag.name)
-  ")
-  echo $output | sed 's/double // '
-}
-
-number_regex='^[0-9]+$'
-previous_output=''
-while true; do
-    current_output=$(get_active_workspace $1)
-
-    # check if the output is different than previous one
-    # and verify if it's an interger (just in case)
-    if [ "$current_output" != "$previous_output" ] && \
-      [[ $current_output =~ $number_regex ]]; then
-        echo "$current_output"
-        previous_output="$current_output"
-    fi
+followed_log="$HOME/.cache/awesomewm/$1-active-tag"
+while inotifywait -qq -e modify "$followed_log"; do
+  echo $(cat $followed_log)
 done

@@ -10,8 +10,8 @@
     :orientation 'h'
     :class 'bar-module'
     (centerbox
+      :width 1902
       :class 'bar'
-      :width 1870
       (left-horizontal)
       (center-horizontal)
       (right-horizontal)

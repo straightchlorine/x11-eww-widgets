@@ -162,6 +162,10 @@ $workspace_active_background: $color10;
 }
 
 // sysinfo --disk
+.disk-prompt {
+  margin-right: 20px;
+}
+
 .disk-mount {
   font-size: 0.8rem;
 }

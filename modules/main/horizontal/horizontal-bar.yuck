@@ -1,7 +1,8 @@
+(include './modules/main/horizontal/network.yuck')
+(include './modules/main/active-workspace.yuck')
+(include './modules/main/workspaces.yuck')
 (include './modules/system-info.yuck')
-(include './modules/workspaces.yuck')
 (include './modules/clock-date.yuck')
-(include './modules/network.yuck')
 (include './modules/weather.yuck')
 
 (defwidget horizontal-bar []
@@ -59,7 +60,7 @@
           :transition 'slideright'
           :duration '0ms'
           :reveal true
-          (activeworkspace)
+          (active-workspace)
         )
       )
     )

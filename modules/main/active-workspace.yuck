@@ -1,4 +1,4 @@
-(defwidget activeworkspace []
+(defwidget active-workspace []
   (box
     :valign 'center'
     :space-evenly false

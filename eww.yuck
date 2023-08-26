@@ -1,42 +1,81 @@
 (include './variables.yuck')
 
-(include './modules/vertical-bar.yuck')
-(include './modules/horizontal-bar.yuck')
+(include './modules/main/horizontal/horizontal-bar.yuck')
+(include './modules/main/vertical/vertical-bar.yuck')
+(include './modules/side/side-bar.yuck')
 
 (defwindow horizontal-bar
-    :monitor 0
-    :geometry
-      (geometry
-        :x "0%"
-        :y "10px"
-        :width "0px"
-        :height "45px"
-        :anchor "top center")
-    :reserve
-      (struts
-        :side "top"
-        :distance "80px")
-    :stacking "bg"
-    :windowtype "dock"
-    :wm-ignore "false"
-    (horizontal-bar)
+  :monitor 0
+  :geometry
+    (geometry
+      :x '0%'
+      :y '10px'
+      :width '0px'
+      :height '45px'
+      :anchor 'top center')
+  :reserve
+    (struts
+      :side 'top'
+      :distance '80px')
+  :stacking 'bg'
+  :windowtype 'dock'
+  :wm-ignore 'false'
+  (horizontal-bar)
 )
 
 (defwindow vertical-bar
-    :monitor 0
-    :geometry
-      (geometry
-        :x "0%"
-        :y "10px"
-        :width "0px"
-        :height "0px"
-        :anchor "top center")
-    :reserve
-      (struts
-        :side "top"
-        :distance "80px")
-    :stacking "bg"
-    :windowtype "dock"
-    :wm-ignore "false"
-    (vertical-bar)
+  :monitor 0
+  :geometry
+    (geometry
+      :x '0%'
+      :y '10px'
+      :width '0px'
+      :height '0px'
+      :anchor 'top center')
+  :reserve
+    (struts
+      :side 'top'
+      :distance '80px')
+  :stacking 'bg'
+  :windowtype 'dock'
+  :wm-ignore 'false'
+  (vertical-bar)
+)
+
+(defwindow side-workspaces
+  :monitor 1
+  :geometry
+    (geometry
+      :x '10px'
+      :y '0px'
+      :width '0px'
+      :height '0px'
+      :anchor 'top left')
+  :reserve
+    (struts
+      :side 'top'
+      :distance '45px')
+  :stacking 'bg'
+  :windowtype 'dock'
+  :wm-ignore 'false'
+  (side-workspaces)
+)
+
+(defwindow side-clock
+  :monitor 1
+  :geometry
+    (geometry
+      :x '-10px'
+      :y '5px'
+      :width '0px'
+      :height '0px'
+      :anchor 'top right')
+  :reserve
+    (struts
+      :side 'top'
+      :distance '45px')
+  :stacking 'bg'
+  :windowtype 'dock'
+  :wm-ignore 'false'
+  (side-clock)
 )

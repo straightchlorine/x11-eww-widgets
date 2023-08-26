@@ -1,0 +1,45 @@
+(include './modules/side/side-workspaces.yuck')
+(include './modules/side/side-active-workspace.yuck')
+
+(defwidget side-workspaces []
+  (box
+    :space-evenly false 
+    :orientation 'v'
+    :class 'secondary-workspace'
+    (box
+      :space-evenly false 
+      :halign 'center'
+      :valign 'start'
+      :spacing 5
+      (box
+        :space-evenly false
+        :spacing 5
+        (revealer
+          :transition 'slideright'
+          :duration '0ms'
+          :reveal true
+          (side-wspaces)
+        )
+        (revealer
+          :transition 'slideright'
+          :duration '0ms'
+          :reveal true
+          (side-active-workspace)
+        )
+      )
+    )
+  )
+)
+
+(include './modules/clock-date.yuck')
+
+(defwidget side-clock []
+  (eventbox
+    :space-evenly false
+    :valign 'center'
+    :halign 'end'
+    :spacing 5
+    :class 'secondary-clock'
+    (clock-date)
+  )
+)

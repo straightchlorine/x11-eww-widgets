@@ -6,6 +6,9 @@
 # eww workspace widget
 
 followed_log="$HOME/.cache/awesomewm/$1-active-tag"
+
+echo $(cat $followed_log)
+
 while inotifywait -qq -e modify "$followed_log"; do
   echo $(cat $followed_log)
 done

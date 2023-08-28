@@ -5,11 +5,18 @@
 # file created by awesomewm and supplies it continously
 # to eww workspace widget
 
-followed_log="$HOME/.cache/awesomewm/tag-overview"
-while inotifywait -qq -e modify "$followed_log"; do
+function output_data () {
+  followed_log="$HOME/.cache/awesomewm/tag-overview"
+
   json=$(cat $followed_log)
   echo $json \
     | jq .display \
     | jq ".[] | select(.id == $1)" \
     | jq .workspaces -c
+}
+
+output_data $1
+
+while inotifywait -qq -e modify "$followed_log"; do
+  output_data $1
 done

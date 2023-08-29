@@ -29,7 +29,7 @@
       :orientation 'h'
       :valign 'center'
       :halign 'start'
-      :class 'disk-prompt'
+      :class 'vertical-disk-prompt'
       (label
         :valign 'center'
         :halign 'start'

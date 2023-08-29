@@ -9,14 +9,14 @@
   :geometry
     (geometry
       :x '0%'
-      :y '10px'
+      :y '6px'
       :width '0px'
       :height '45px'
       :anchor 'top center')
   :reserve
     (struts
       :side 'top'
-      :distance '80px')
+      :distance '68px')
   :stacking 'bg'
   :windowtype 'dock'
   :wm-ignore 'false'
@@ -28,14 +28,14 @@
   :geometry
     (geometry
       :x '0%'
-      :y '10px'
+      :y '6px'
       :width '0px'
       :height '0px'
       :anchor 'top center')
   :reserve
     (struts
       :side 'top'
-      :distance '80px')
+      :distance '68px')
   :stacking 'bg'
   :windowtype 'dock'
   :wm-ignore 'false'

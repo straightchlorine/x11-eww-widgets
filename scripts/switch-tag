@@ -1,0 +1,3 @@
+#!/bin/bash
+
+awesome-client "screen[$1].tags[$2]:view_only()"

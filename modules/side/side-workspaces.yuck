@@ -1,7 +1,5 @@
 (defwidget side-wspaces []
   (eventbox
-    ; port to awesomewm
-    ;:onscroll 'echo {} | sed -e \"s/up/-1/g\" -e \"s/down/+1/g\" | xargs hyprctl dispatch workspace'
     :class 'workspaces-module'
     (overlay
       (box
@@ -12,8 +10,7 @@
         (for workspace in workspaces-side
           (button
             :class 'workspace'
-            ; port to awesomewm
-            ;:onclick 'hyprctl dispatch workspace ${i.id}'
+            :onclick './scripts/switch-tag 2 ${workspace.id}'
             (label
               :valign 'center'
               :class
